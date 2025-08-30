@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Instant Personal Loan – Fast, Paperless | Call to Apply</title>
+  <meta name="description" content="Instant personal loans inspired by KreditBee experience. Paperless KYC, quick approval, and fast disbursal. Tap 'Call Now' to apply.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1020; /* deep ink */
+      --panel:#0f1530; /* card bg */
+      --accent:#6ee7b7; /* mint */
+      --accent-2:#22d3ee; /* cyan */
+      --text:#e5e7eb; /* light */
+      --muted:#9ca3af; /* muted */
+      --ring: rgba(110, 231, 183, .35);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 22px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 500px at 10% -10%, rgba(34,211,238,.15), transparent 50%),
+                  radial-gradient(1000px 500px at 90% -30%, rgba(110,231,183,.12), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1120px, 92vw); margin-inline:auto}
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(11,16,32,.9), rgba(11,16,32,.6));
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; gap:12px; align-items:center}
+    .logo{
+      width:40px;height:40px;border-radius:12px;
+      background: conic-gradient(from 140deg, var(--accent), var(--accent-2));
+      box-shadow: 0 8px 20px var(--ring);
+    }
+    .brand h1{font-size:1.1rem; margin:0; font-weight:800; letter-spacing:.2px}
+    .nav a.btn{padding:10px 16px; border-radius:999px; font-weight:600; border:1px solid rgba(255,255,255,.08);}
+    .nav a.btn:hover{border-color: rgba(255,255,255,.18)}
+
+    /* Hero */
+    .hero{padding: clamp(42px, 6vw, 80px) 0 18px}
+    .hero .wrap{display:grid; grid-template-columns: 1.1fr .9fr; gap:36px; align-items:center}
+    .badge{display:inline-flex; align-items:center; gap:10px; padding:8px 12px; border-radius:999px; background:rgba(34,211,238,.08); border:1px solid rgba(34,211,238,.25); color:#b9f7ff; font-weight:600; font-size:.9rem}
+    .title{font-size: clamp(2rem, 3.6vw, 3.25rem); line-height:1.1; margin:14px 0 12px; font-weight:800}
+    .subtitle{color:var(--muted); font-size: clamp(1rem, 2vw, 1.15rem); margin:0 0 18px}
+    .hero-card{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      padding:22px; box-shadow: var(--shadow);
+    }
+    .check{display:flex; gap:12px; align-items:flex-start; margin:10px 0}
+    .check svg{flex:0 0 22px}
+
+    .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:20px}
+    .cta{display:inline-flex; align-items:center; gap:10px; padding:14px 18px; border-radius:999px; font-weight:700; letter-spacing:.2px; box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,.08)}
+    .cta.primary{background: linear-gradient(135deg, var(--accent), var(--accent-2)); color:#0b1020}
+    .cta.ghost{background: rgba(255,255,255,.04)}
+
+    .hero-visual{
+      position:relative; aspect-ratio: 4/3; border-radius: var(--radius);
+      background: radial-gradient(400px 200px at 20% 20%, rgba(110,231,183,.15), transparent 60%),
+                  radial-gradient(400px 200px at 80% 10%, rgba(34,211,238,.18), transparent 60%),
+                  linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08); overflow:hidden;
+    }
+    .hero-visual .card{
+      position:absolute; inset:auto 14px 14px 14px; background:rgba(13,19,44,.85);
+      border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:14px;
+      display:grid; grid-template-columns: 1fr 1fr; gap:10px; 
+    }
+    .info-chip{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:10px}
+    .stat{display:flex; flex-direction:column}
+    .stat .k{font-weight:800; font-size:1.4rem}
+    .stat .l{font-size:.85rem; color:var(--muted)}
+
+    /* Sections */
+    section{padding: clamp(38px, 5.5vw, 72px) 0}
+    .grid-3{display:grid; grid-template-columns: repeat(3, 1fr); gap:18px}
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius); padding:20px; box-shadow: var(--shadow);
+    }
+    .card h3{margin:6px 0 6px; font-size:1.15rem}
+    .card p{margin:0; color:var(--muted)}
+
+    .steps{display:grid; grid-template-columns: repeat(4, 1fr); gap:14px}
+    .step{position:relative; padding:18px; border-radius:16px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08)}
+    .step b{display:inline-block; margin-bottom:8px}
+
+    /* FAQ */
+    .faq{display:grid; grid-template-columns: 1fr 1fr; gap:16px}
+    details{
+      background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08);
+      border-radius:16px; padding:14px 16px
+    }
+    summary{cursor:pointer; font-weight:600}
+    details p{color:var(--muted); margin:10px 0 0}
+
+    /* Sticky Call Bar */
+    .call-sticky{
+      position:fixed; left:50%; transform:translateX(-50%); bottom:16px; z-index:60;
+      display:flex; gap:10px; align-items:center; 
+      padding:12px 14px; border-radius:999px; 
+      background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:#0b1020;
+      box-shadow:0 10px 30px rgba(34,211,238,.45);
+      border:1px solid rgba(255,255,255,.2);
+    }
+    .call-sticky .hide{display:none}
+
+    /* Footer */
+    footer{padding:28px 0 42px; color:var(--muted)}
+    .disclaimer{font-size:.9rem; border-left:3px solid var(--accent); padding-left:12px}
+
+    /* Responsive */
+    @media (max-width: 960px){
+      .hero .wrap{grid-template-columns: 1fr; gap:18px}
+      .hero-visual{order:-1}
+      .steps{grid-template-columns: 1fr 1fr}
+      .faq{grid-template-columns: 1fr}
+    }
+    @media (max-width: 720px){
+      .grid-3{grid-template-columns: 1fr}
+      .nav a.hide-sm{display:none}
+      .title{font-size: 1.9rem}
+      .call-sticky .hide{display:inline}
+      .cta{width:100%; justify-content:center}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <h1>SwiftBee Loans</h1>
+      </div>
+      <nav>
+        <a href="#how" class="btn hide-sm">How it works</a>
+        <a href="#faq" class="btn hide-sm">FAQ</a>
+        <a href="tel:+919999999999" class="btn" aria-label="Call now to apply">Call Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container wrap">
+      <div>
+        <span class="badge">KreditBee‑style experience • Paperless</span>
+        <h2 class="title">Instant Personal Loans up to ₹3,00,000</h2>
+        <p class="subtitle">Quick approval, minimal documents, and money disbursed fast to your bank account. Inspired by the smooth KreditBee journey — tap <b>Call Now</b> to get started.</p>
+
+        <div class="hero-card">
+          <div class="check">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18l-5-5" stroke="url(#g)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="g" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#6ee7b7"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs></svg>
+            <div>
+              <b>Paperless KYC</b>
+              <div class="muted">PAN, Aadhaar & basic details — no physical paperwork.</div>
+            </div>
+          </div>
+          <div class="check">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18l-5-5" stroke="url(#g2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="g2" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#6ee7b7"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs></svg>
+            <div>
+              <b>Flexible Tenure</b>
+              <div class="muted">Choose 3–24 months with transparent EMI schedule.</div>
+            </div>
+          </div>
+          <div class="check">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18l-5-5" stroke="url(#g3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="g3" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#6ee7b7"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs></svg>
+            <div>
+              <b>Fast Disbursal</b>
+              <div class="muted">Eligibility checked in minutes; funds sent soon after approval.</div>
+            </div>
+          </div>
+          <div class="cta-row">
+            <a class="cta primary" href="tel:+919999999999" aria-label="Call now to apply">
+              📞 Call Now & Apply
+            </a>
+            <a class="cta ghost" href="#features">See Benefits</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="card" aria-label="Quick facts">
+          <div class="info-chip stat">
+            <span class="k">₹3,00,000</span>
+            <span class="l">Max loan amount</span>
+          </div>
+          <div class="info-chip stat">
+            <span class="k">3–24 mo</span>
+            <span class="l">Tenure options</span>
+          </div>
+          <div class="info-chip stat">
+            <span class="k">Minutes</span>
+            <span class="l">Eligibility check</span>
+          </div>
+          <div class="info-chip stat">
+            <span class="k">100% digital</span>
+            <span class="l">End‑to‑end process</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features">
+    <div class="container">
+      <div class="grid-3">
+        <div class="card">
+          <h3>Minimal Documents</h3>
+          <p>PAN, Aadhaar, selfie, and bank details — that’s it. No collateral required for eligible applicants.</p>
+        </div>
+        <div class="card">
+          <h3>Transparent Pricing</h3>
+          <p>Interest, processing fee, and any late fee are shown upfront before you proceed. No hidden charges.</p>
+        </div>
+        <div class="card">
+          <h3>Trusted Experience</h3>
+          <p>User flow inspired by KreditBee: simple steps, real‑time status, and quick support over call.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how">
+    <div class="container">
+      <h2 class="title" style="font-size:1.6rem">How It Works</h2>
+      <div class="steps">
+        <div class="step"><b>1) Call Us</b><br/>Tap <em>Call Now</em> to start your application with a specialist.</div>
+        <div class="step"><b>2) Share Basics</b><br/>Tell us your PAN, Aadhaar, and employment details over a secure line.</div>
+        <div class="step"><b>3) Get Offer</b><br/>Receive a personalized loan offer with tenure and EMI preview.</div>
+        <div class="step"><b>4) Disbursal</b><br/>On approval, money is transferred swiftly to your bank account.</div>
+      </div>
+
+      <div class="card" style="margin-top:16px">
+        <b>Eligibility Snapshot</b>
+        <p class="muted">Indian resident • 21–60 years • Stable income • Valid PAN & Aadhaar • Active bank account</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="title" style="font-size:1.6rem">Frequently Asked Questions</h2>
+      <div class="faq">
+        <details>
+          <summary>What amounts can I borrow?</summary>
+          <p>Eligible users can get up to ₹3,00,000. The final amount depends on your credit profile and documentation.</p>
+        </details>
+        <details>
+          <summary>Is this the same as KreditBee?</summary>
+          <p>No. This site is <b>not affiliated</b> with KreditBee. We offer a KreditBee‑style experience with paperless processing and quick disbursal.</p>
+        </details>
+        <details>
+          <summary>How fast is approval?</summary>
+          <p>Preliminary checks are completed in minutes after your call. Final approval and disbursal timelines depend on verification.</p>
+        </details>
+        <details>
+          <summary>Are there any hidden charges?</summary>
+          <p>No. You’ll see the interest rate, processing fee, GST as applicable, and any potential late fee before accepting the offer.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Callout -->
+  <section>
+    <div class="container">
+      <div class="card" style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap">
+        <div>
+          <h3 style="margin:0">Ready to apply?</h3>
+          <p class="muted" style="margin:6px 0 0">Talk to a loan specialist now and finish your KYC over a secure call.</p>
+        </div>
+        <a class="cta primary" href="tel:+919999999999" aria-label="Call to apply">📞 Call Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p class="disclaimer">Disclaimer: This website is for informational and marketing purposes only and is <b>not affiliated</b> with KreditBee or any of its group companies. Loan amounts, interest rates, and timelines shown are examples and may vary based on eligibility and verification. Borrow responsibly.</p>
+      <p style="margin-top:10px">© <span id="yr"></span> SwiftBee Loans. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Sticky Call Bar -->
+  <a class="call-sticky" href="tel:+919999999999" aria-label="Sticky call bar">
+    <span class="hide">📞</span>
+    <b>Call Now</b>
+    <span class="hide">– Instant Help</span>
+  </a>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
